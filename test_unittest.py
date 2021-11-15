@@ -8,7 +8,7 @@ class TestVisibilityGraph(unittest.TestCase):
     def test_Point_get_coordinate(self):
         self.assertEqual(Point(1, 2).get_coordinate(), (1, 2))
 
-    def test_Point_get_distance(self):  # è meglio fare come in questo test o come in quello successivo?
+    def test_Point_get_distance(self):
         self.assertEqual(Point(3, 3).get_distance(Point(6, 7)), 5)
         self.assertEqual(Point(6, 7).get_distance(Point(3, 3)), 5)
         self.assertEqual(Point(3, 3).get_distance(Point(3, 3)), 0)
