@@ -1313,11 +1313,5 @@ def main_trapezoidal_decomposition():
 
 
 if __name__ == '__main__':
-    main_visibility_graph()
-    # main_trapezoidal_decomposition()
-
-#piccolo bug grafico (visualizzazione di un segmento extra), nel caso in cui il segmento passi attraverso una figura usando 2 vertici (quindi non intersecando nessuno dei lati),
-# dovuto ai limiti del teorema di jordan nel trattare questo caso particolare
-# (caso descritto in trapezoidal e in visibility "completo" nel caso di diagonali esterne che attraversano figure concave a "C" passando per i vertici, senza intersecare nessuno dei lati)
-
-#questi 2 casi rari NON influiscono sulla logica dell'algoritmo, che riesce in ogni caso a trovare e a plottare la mappa e il percorso migliore, pertanto sono stati trascurati.
+    # main_visibility_graph()
+    main_trapezoidal_decomposition()

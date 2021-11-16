@@ -1,7 +1,8 @@
 import unittest
-from visibility_graph_and_trapezoidal_decomposition import Point, Segment, have_common_point, check_segment_vertical_intersection, \
+from visibility_graph_and_trapezoidal_decomposition import Point, Segment, have_common_point, \
+    check_segment_vertical_intersection, \
     check_segment_intersection, is_segment_intersection, check_line_segment_vertical_intersection, \
-    check_vertical_line_segment_intersection, check_line_segment_intersection, Polygon, Map, straight_line_segment_intersection_point, segment_segment_intersection_point
+    check_vertical_line_segment_intersection, check_line_segment_intersection, Polygon, Map
 
 
 class TestVisibilityGraph(unittest.TestCase):
@@ -210,6 +211,11 @@ class TestVisibilityGraph(unittest.TestCase):
         map1 = Map("default")
         self.assertTrue(map1.segment_is_diagonal(Segment(Point(18, 21), Point(15, 12))))
         self.assertFalse(map1.segment_is_diagonal(Segment(Point(9, 14), Point(18, 21))))
+
+    # piccolo bug grafico (visualizzazione di un segmento extra), nel caso in cui il segmento passi attraverso una
+    # figura usando 2 vertici (quindi non intersecando nessuno dei lati),
+    # NON influisce sulla logica dell'algoritmo, che riesce in ogni caso a trovare e a plottare la mappa e il percorso
+    # migliore, pertanto è stato trascurato.
 
     def test_Map_is_reduced_map_intersection(self):
         map1 = Map("default")
